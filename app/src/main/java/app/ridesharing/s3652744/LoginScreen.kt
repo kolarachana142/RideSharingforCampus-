@@ -48,6 +48,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import app.ridesharing.s3652744.ui.theme.Purple40
 import com.google.firebase.database.FirebaseDatabase
 
 
@@ -178,7 +179,7 @@ fun LoginScreen(navController: NavHostController) {
                     .height(56.dp),
                 shape = RoundedCornerShape(12.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFF1E88E5)
+                    containerColor = Purple40
                 )
             ) {
                 Text("Login", fontSize = 18.sp)
@@ -202,7 +203,7 @@ fun LoginScreen(navController: NavHostController) {
                     text = "Reset Now",
                     style = MaterialTheme.typography.bodyMedium.copy(
                         fontWeight = FontWeight.Bold,
-                        color = Color(0xFF1E88E5)
+                        color = Purple40
                     ),
                     modifier = Modifier.clickable {
                         navController.navigate(AppRoutes.ForgotPassword.route)
@@ -228,7 +229,7 @@ fun LoginScreen(navController: NavHostController) {
                     text = "Register",
                     style = MaterialTheme.typography.bodyMedium.copy(
                         fontWeight = FontWeight.Bold,
-                        color = Color(0xFF1E88E5)
+                        color = Purple40
                     ),
                     modifier = Modifier.clickable {
 

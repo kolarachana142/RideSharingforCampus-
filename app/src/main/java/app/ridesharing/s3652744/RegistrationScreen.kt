@@ -57,6 +57,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import app.ridesharing.s3652744.ui.theme.Purple40
 import com.google.firebase.database.FirebaseDatabase
 import java.time.LocalDate
 import java.time.Period
@@ -331,7 +332,7 @@ fun RegisterScreen(navController: NavHostController) {
                     .fillMaxWidth()
                     .height(56.dp),
                 shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1E88E5))
+                colors = ButtonDefaults.buttonColors(containerColor = Purple40)
             ) {
                 Text("Register", fontSize = 18.sp)
             }
@@ -346,7 +347,7 @@ fun RegisterScreen(navController: NavHostController) {
                 Text(
                     text = "Login",
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1E88E5),
+                    color = Purple40,
                     modifier = Modifier.clickable {
 
                         navController.navigate(AppRoutes.Login.route){

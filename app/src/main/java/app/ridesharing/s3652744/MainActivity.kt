@@ -39,6 +39,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import app.ridesharing.s3652744.ui.theme.BackgroundColor
 import app.ridesharing.s3652744.ui.theme.RideSharingTheme
 import kotlinx.coroutines.delay
 
@@ -131,7 +132,7 @@ fun WelComeScreenDesign() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White),
+            .background(color = BackgroundColor),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -142,7 +143,7 @@ fun WelComeScreenDesign() {
                 painter = painterResource(id = R.drawable.app_icon),
                 contentDescription = "App Logo",
                 modifier = Modifier
-                    .size(150.dp)
+                    .size(200.dp)
                     .graphicsLayer(
                         scaleX = logoScale.value,
                         scaleY = logoScale.value
@@ -153,7 +154,7 @@ fun WelComeScreenDesign() {
 
             Text(
                 text = "By",
-                color = Color.Gray,
+                color = Color.LightGray,
                 fontSize = 32.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
@@ -166,7 +167,7 @@ fun WelComeScreenDesign() {
 
             Text(
                 text = "Kola Rachana",
-                color = Color.Black,
+                color = Color.White,
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
