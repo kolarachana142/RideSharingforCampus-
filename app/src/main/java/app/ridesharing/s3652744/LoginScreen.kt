@@ -1,5 +1,6 @@
 package app.ridesharing.s3652744
 
+import android.content.Context
 import kotlin.jvm.java
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -169,7 +170,17 @@ fun LoginScreen(navController: NavHostController) {
 
                         else -> {
 
-                           //login firebase
+                            val userData = UserData(
+                                "",
+                                "",
+                                "",
+                                email,
+                                password
+
+                            )
+
+                            loginUser(userData, context)
+
                         }
 
                     }
@@ -246,4 +257,42 @@ fun LoginScreen(navController: NavHostController) {
 @Composable
 fun LoginScreenPreview() {
     LoginScreen(navController = NavHostController(LocalContext.current))
+}
+
+
+fun loginUser(userData: UserData, context: Context, onLoginSuccess: () -> Unit={}) {
+
+    val firebaseDatabase = FirebaseDatabase.getInstance()
+    val databaseReference =
+        firebaseDatabase.getReference("SignedUpUsers").child(userData.email.replace(".", ","))
+
+    databaseReference.get().addOnCompleteListener { task ->
+        if (task.isSuccessful) {
+            val dbData = task.result?.getValue(UserData::class.java)
+            if (dbData != null) {
+                if (dbData.password == userData.password) {
+
+//                    AppUserData.saveLoginStatus(context, true)
+//                    AppUserData.saveUserName(context, dbData.name)
+//                    AppUserData.saveUserEmail(context, dbData.emailid)
+                    Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
+
+                    onLoginSuccess.invoke()
+
+                } else {
+                    Toast.makeText(context, "Seems Incorrect Credentials", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } else {
+                Toast.makeText(context, "Your account not found", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            Toast.makeText(
+                context,
+                "Something went wrong",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    }
 }

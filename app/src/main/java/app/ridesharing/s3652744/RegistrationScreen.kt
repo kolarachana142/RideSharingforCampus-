@@ -362,13 +362,6 @@ fun RegisterScreen(navController: NavHostController) {
 }
 
 
-data class UserData
-    (
-    var name: String = "",
-    var dob: String ="",
-    var email: String ="",
-    var password: String ="",
-)
 
 fun Context.findActivity(): Activity? = when (this) {
     is Activity -> this
@@ -383,3 +376,12 @@ fun Context.findActivity(): Activity? = when (this) {
 fun RegisterScreenPreview() {
     RegisterScreen(navController = NavHostController(LocalContext.current))
 }
+
+data class UserData
+    (
+    var name: String = "",
+    var dob: String ="",
+    var gender: String ="",
+    var email: String ="",
+    var password: String ="",
+)
