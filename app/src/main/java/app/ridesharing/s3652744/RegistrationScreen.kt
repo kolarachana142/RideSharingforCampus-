@@ -63,8 +63,6 @@ import java.time.LocalDate
 import java.time.Period
 import java.time.format.DateTimeFormatter
 
-
-
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun RegisterScreen(navController: NavHostController) {

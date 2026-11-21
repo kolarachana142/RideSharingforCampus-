@@ -178,8 +178,14 @@ fun LoginScreen(navController: NavHostController) {
                                 password
 
                             )
+//                            navController.navigate(AppRoutes.Register.route)
 
-                            loginUser(userData, context)
+                            loginUser(userData, context, onLoginSuccess = {
+                                navController.navigate(AppRoutes.Home.route) {
+                                    popUpTo(AppRoutes.Login.route) { inclusive = true }
+                                }
+
+                            })
 
                         }
 
@@ -272,9 +278,6 @@ fun loginUser(userData: UserData, context: Context, onLoginSuccess: () -> Unit={
             if (dbData != null) {
                 if (dbData.password == userData.password) {
 
-//                    AppUserData.saveLoginStatus(context, true)
-//                    AppUserData.saveUserName(context, dbData.name)
-//                    AppUserData.saveUserEmail(context, dbData.emailid)
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
 
                     onLoginSuccess.invoke()

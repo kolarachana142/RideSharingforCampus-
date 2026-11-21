@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "579791176294",
+    "firebase_url": "https://ridesharingapp-cd2c9-default-rtdb.firebaseio.com",
+    "project_id": "ridesharingapp-cd2c9",
+    "storage_bucket": "ridesharingapp-cd2c9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579791176294:android:39997f5a2bdcce6d47e3a7",
+        "android_client_info": {
+          "package_name": "app.ridesharing.s3652744"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiGJWjgZn4UBHN3TV25Rzl0-NWZ8v6pPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

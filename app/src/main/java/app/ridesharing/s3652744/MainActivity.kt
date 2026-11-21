@@ -77,7 +77,9 @@ fun AppNavGraph() {
             RegisterScreen(navController = navController)
         }
 
-
+        composable(AppRoutes.Home.route) {
+            CampusRideHomeScreen()
+        }
 
 
     }
