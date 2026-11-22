@@ -306,6 +306,7 @@ fun RegisterScreen(navController: NavHostController) {
                                 Toast.makeText(context, "Registration Successful", Toast.LENGTH_SHORT).show()
 
 
+
                                 navController.navigate(AppRoutes.Login.route){
                                     popUpTo(AppRoutes.Register.route) { inclusive = true }
                                 }

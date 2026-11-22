@@ -280,6 +280,10 @@ fun loginUser(userData: UserData, context: Context, onLoginSuccess: () -> Unit={
 
                     Toast.makeText(context, "Login Successful", Toast.LENGTH_SHORT).show()
 
+                    SPData.saveLoginStatus(context,true)
+                    SPData.saveUserName(context,dbData.name)
+                    SPData.saveUserEmail(context,dbData.email)
+
                     onLoginSuccess.invoke()
 
                 } else {

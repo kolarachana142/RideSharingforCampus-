@@ -66,7 +66,7 @@ fun AppNavGraph() {
         startDestination = AppRoutes.Splash.route
     ) {
         composable(AppRoutes.Splash.route) {
-            PackageTrackerStartScreen(navController = navController)
+            RideSharingStartScreen(navController = navController)
         }
 
         composable(AppRoutes.Login.route) {
@@ -88,7 +88,7 @@ fun AppNavGraph() {
 
 
 @Composable
-fun PackageTrackerStartScreen(navController: NavController) {
+fun RideSharingStartScreen(navController: NavController) {
 
     val context = LocalContext.current
 
@@ -96,10 +96,10 @@ fun PackageTrackerStartScreen(navController: NavController) {
         delay(3000)
 
 
-            navController.navigate(AppRoutes.Login.route) {
-                popUpTo(AppRoutes.Splash.route) {
-                    inclusive = true
-                }
+        navController.navigate(AppRoutes.Login.route) {
+            popUpTo(AppRoutes.Splash.route) {
+                inclusive = true
+            }
         }
 
     }
